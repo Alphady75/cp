@@ -1,0 +1,19 @@
+{% for type, messages in app.flashes %}
+	{% for message in messages %}
+		<div class="alert alert-{{ type }} alert-dismissible fade show mb-3 flash-message h-100" role="alert" style="text-align: left!important">
+			<strong class="my-0 text-{{ type }}">
+                {% if type == 'danger' %}
+					<i class="mdi mdi-exclamation-triangle"></i> Echec!
+                {% elseif type == 'warning' %}
+					<i class="mdi mdi-exclamation-triangle"></i> Attention!
+				{% elseif type =='info' %}
+					<i class="mdi mdi-check"></i> En cours de validation!
+				{% elseif type =='success' %}
+					<i class="mdi mdi-check"></i> Succès!
+				{% endif %}
+            </strong> -
+			<p class="font-weight-light d-inline">{{ message }}</p>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+		</div>
+	{% endfor %}
+{% endfor %}

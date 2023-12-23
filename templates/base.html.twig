@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gurdeep singh osahan">
+    <meta name="author" content="Gurdeep singh osahan">
+    <title>{% block title %}{{ appName }}{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('img/logo-miniature-web.PNG') }}" type="image/x-icon">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('themes/base/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link href="{{ asset('themes/base/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Material Design Icons -->
+    <link href="{{ asset('themes/base/vendor/icons/css/materialdesignicons.min.css') }}" media="all" rel="stylesheet"
+        type="text/css">
+    <!-- Slick -->
+    <link href="{{ asset('themes/base/vendor/slick-master/slick/slick.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('themes/base/vendor/slick/slick-theme.css') }}" />
+    <!-- Lightgallery -->
+    <link href="{{ asset('themes/base/vendor/lightgallery-master/dist/css/lightgallery.min.css') }}" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link href="{{ asset('themes/base/vendor/select2/css/select2-bootstrap.css') }}" />
+    <link href="{{ asset('themes/base/vendor/select2/css/select2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('themes/base/css/style.css') }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('themes/base/vendor/modal-video/css/modal-video.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="{{ asset('themes/base/vendor/magnific-popup/magnific-popup.css') }}">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('design') }}
+        {{ encore_entry_link_tags('medias') }}
+        {{ encore_entry_link_tags('nav') }}
+    {% endblock %}
+    <style>
+        form .btn,
+        .form-control {
+            border-radius: 30px !important;
+        }
+        .flash-message{
+            position: fixed;
+            bottom: 20px;
+            height: auto!important;
+            left: 10px;
+            z-index: 100;
+        }
+        @media (max-width: 600px) {
+            .section-bannier .btn-rose {
+                margin-top: 13%!important;
+            }
+        }
+        h1, h2 {
+            font-family: 'Avenir';
+        }
+        .section-bannier .caption h2 {
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-gametime .capsule {
+            padding: 10px 30px!important;
+            font-size: 21px!important;
+        }
+        @media (max-width: 600px) {
+            .details .text {
+                font-size: 16px !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .section-gametime .service-slider .service {
+                height: 185px!important;
+            }
+        }
+        .section-gametime .service-slider .service .box {
+            margin-top: 81%!important;
+        }
+        @media (max-width: 600px) {
+            p {
+                font-size: 19px !important;
+            }
+
+        }
+        .section-gametime h2 {
+            font-family: 'Avenir-bold';
+        }
+        .section-gametime h2 {
+            font-family: 'Avenir';
+        }
+        .freelance-slider .col h3 {
+            margin-bottom: 25px;
+        }
+        h2.comming {
+            margin-bottom: 45px;
+            padding-top: 40px;
+        }
+        @media (max-width: 600px) {
+            section .btn-rose, section .btn-green {
+                padding: 10px 30px !important;
+                font-size: 17px !important;
+            }
+        }
+        .block-btn-join .btn {
+            font-family: 'Avenir';
+        }
+        .rose-bg, .btn-rose {
+            font-weight: bold !important;
+        }
+        .hurt-bock {
+            margin-top: 0px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 600px) {
+            .media-hurt {
+                position: relative;
+                top: 20px;
+                left: 16px;
+            }
+        }
+        @media (max-width: 800px) {
+            .section_space {
+                padding: 70px 0 !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .hsmall {
+                font-size: 1.2em !important;
+                font-weight: bold;
+                margin: 0 0 22px 5%;
+            }
+        }
+        .section-gametime .details p {
+            font-size: 20px!important;
+            font-family: 'Avenir'!important;
+            font-weight: 600!important;
+        }
+        @media (max-width: 600px) {
+            .section_notification .bloc_notification {
+                width: 90%;
+            }
+        }
+        @media (max-width: 800px) {
+            .section_notification .bloc_notification p {
+                font-size: 16px !important;
+            }
+        }
+        .section_notification .bloc_notification {
+            padding: 20px 14px 5px !important;
+        }
+        .section_register {
+            padding-top: 60px;
+        }
+        @media (max-width: 800px) {
+            .section-pre-lancement .text {
+                font-size: 20px !important;
+                padding: 10px 0!important;
+                font-family: 'Avenir';
+            }
+        }
+        @media (max-width: 800px) {
+            .section-pre-lancement .join p {
+                font-size: 16px !important;
+                font-family: Avenir-demi-bold;
+                padding: 8px 0px;
+            }
+        }
+        .copyright .social {
+            text-align: center;
+        }
+        footer .logo {
+            position: relative;
+            left: -4px;
+        }
+        .navbar-nav .btn {
+            padding: 15px !important;
+            font-size: 16px;
+            font-family: 'Avenir';
+            font-weight: bold !important;
+        }
+        .swiper-wrapper .img-thumbnail{
+            border-color: black!important;
+        }
+        @media (max-width: 600px) {
+            .freelance-slider .freelancer {
+                width: 71%!important;
+            }
+        }
+        .navbar-fixed{
+            transition: opacity 0.2s, display: 0.2s;
+        }
+    </style>
+</head>
+
+<body data-turbo="false">
+    {% include "partials/base/_header.html.twig" %}
+
+    {% block body %}{% endblock %}
+
+    {% include "partials/base/_footer.html.twig" %}
+
+    {% include "partials/_flash.html.twig" %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('themes/base/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('themes/base/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Contact form JavaScript -->
+    <!-- Modal video -->
+    <script src="{{ asset('themes/base/vendor/modal-video/js/modal-video.js') }}"></script>
+    <script>
+        //$("").modalVideo({channel:'vimeo'});
+        new ModalVideo('.js-modal-btn');
+    </script>
+
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="{{ asset('themes/base/js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('themes/base/js/contact_me.js') }}"></script>
+    <!-- Slick -->
+    <script src="{{ asset('themes/base/vendor/slick-master/slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
+    <!-- lightgallery -->
+    <script src="{{ asset('themes/base/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"></script>
+    <!-- select2 Js -->
+    <script src="{{ asset('themes/base/vendor/select2/js/select2.min.js') }}"></script>
+    <!-- Custom -->
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('customjs') }}
+    {% endblock %}
+
+   <script>
+
+    $(document).ready(function () {
+        $('#nav-icon4').click(function () {
+            $(this).toggleClass('open');
+        });
+    });
+      
+    $('#register').click(function () {
+        $('#navbarResponsive').removeClass('show');
+        $('#nav-icon4').removeClass('open');
+        $('body').css("overflow","auto")
+    });
+      
+    $('.nav-button').click(function () {
+        $('#navbarResponsive').removeClass('show');
+        $('#nav-icon4').removeClass('open');
+        $('body').css("overflow","auto")
+    });
+
+   </script>
+   
+    <script>
+      $(document).ready(()=>{
+            let isMenuAlreadyOpen = false;
+            $('.navbar-toggler').on('click',()=>{
+                  $('body').css("overflow",isMenuAlreadyOpen?"auto":"hidden")
+                  isMenuAlreadyOpen = !isMenuAlreadyOpen
+            })
+      })
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVM8GW4R0D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XVM8GW4R0D');
+    </script>
+
+    <script>
+        const swiper = new Swiper('.sample-slider', {
+            loop: true,
+            speed: 800,
+            slidesPerView: 3,      
+            autoplay: {
+                delay: 0,
+            },
+        });
+    </script>
+</body>
+
+</html>

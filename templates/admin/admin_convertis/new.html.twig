@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New Convertis{% endblock %}
+
+{% block body %}
+    <h1>Create new Convertis</h1>
+
+    {{ include('admin_convertis/_form.html.twig') }}
+
+    <a href="{{ path('admin_convertis_index') }}">back to list</a>
+{% endblock %}

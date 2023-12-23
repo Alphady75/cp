@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ appName }} : Change d'ADN chaque semaine.. {% endblock %}
+
+{% block body %}
+<!-- 404 Page -->
+	<section class="py-5 bg-white border-top border-bottom">
+		<div class="container">
+			<div class="row py-lg-5">
+				<div class="col-lg-8 col-md-8 mx-auto text-center">
+					<h1><img class="img-fluid" src="{{ asset('img/success.svg') }}" alt="success"></h1>
+					<h1>Inscripton réussie</h1>
+					<p class="land">Merci pour votre colaboration!.</p>
+					<div class="mt-5">
+						<a href="{{ path('landing_page') }}" class="btn btn-rose"><i class="mdi mdi-home"></i> Revenir à l'accueil</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End 404 Page -->
+{% endblock %}

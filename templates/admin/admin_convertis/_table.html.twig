@@ -1,0 +1,172 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="card-title">
+                    {% if app.request.attributes.get('_route') == 'admin_convertis_index' %}
+
+                    {{ listeTitre }}
+
+                    {% else %}
+                    Convertis / Inscrits
+                    {% endif %}
+                </h2>
+                <p>
+                    {{ convertis.getTotalItemCount }} resutat{{ convertis.getTotalItemCount > 0 ? 's' : ''}}
+                    | de 1 à {{ convertis|length }}
+                </p>
+            </div>
+            <div class="col-6 text-right">
+                <form action="{{ path('admin_sold_out', {id: cplus.id}) }}" method="post"
+                    onsubmit="return confirm('Voulez-vous vraiment confirmé cette action ?');" class="d-block">
+
+                    <div class="row">
+                        <div class="col-6 text-right ml-auto">
+                            <strong>Mode</strong> <span class="badge bg-white badge-pill border font-weight-bold"
+                                style="color: #FF42A1!important">Sold Out</span>
+                            <strong>{{ cplus.soldOut ? 'Activé' : 'Désactivé' }}</strong>
+                        </div>
+                        <div class="col-4">
+                            <input type="hidden" name="_token" value="{{ csrf_token('soldout' ~ cplus.id) }}">
+                            <button type="submi"
+                                class="btn btn-block btn-sm btn-{{ cplus.soldOut ? 'inverse-danger' : 'inverse-primary' }}">{{
+                                cplus.soldOut ? 'Désactivé' : 'Activé' }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{ form_start(form) }}
+        <div class="row mb-3">
+            <div class="col-sm-3 text-dark">
+                {{ form_widget(form.listeAttente) }}
+            </div>
+        </div>
+        <div class="row align-items-center mb-0 pb-0">
+            <div class="col-sm-3">
+                <div class="input-group border rounded">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-transparent border-0" id="basic-addon1">
+                            <i class="icon-search"></i>
+                        </span>
+                    </div>
+                    {{ form_widget(form.instagram) }}
+                </div>
+            </div>
+            <div class="col-5 col-sm-2">
+                {{ knp_pagination_sortable(convertis, 'Date', 'c.created') }}
+            </div>
+            <div class="col-7 col-sm-3">
+                {{ knp_pagination_sortable(convertis, 'Recurrence', 'c.countRec') }}
+            </div>
+            <div class="col-6 col-sm-2">
+                {{ form_widget(form.minDate) }}
+            </div>
+            <div class="col-6 col-sm-2">
+                {{ form_widget(form.maxDate) }}
+            </div>
+        </div>
+        <div class="py-3 text-right">
+            {% if query %}
+
+            {% if app.request.attributes.get('_route') == 'admin_dashboard' %}
+            <a href="{{ path('admin_dashboard') }}" class="btn btn-inverse-danger btn-fw">
+                <i class="mdi mdi-filter-remove-outline"></i>
+            </a>
+
+            {% else %}
+            <a href="{{ path('admin_convertis_index') }}" class="btn btn-inverse-danger btn-fw">
+                <i class="mdi mdi-filter-remove-outline"></i>
+            </a>
+            {% endif %}
+
+            {% endif %}
+
+            <button type="submit" class="btn btn-light border btn-fw">
+                <i class="icon-search"></i> Rechecher
+            </button>
+        </div>
+        {{ form_end(form) }}
+
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table id="" class="display expandable-table table-hover" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Numero</th>
+                                <th>Instagram</th>
+                                <th>Avatar</th>
+                                <th>Récurrence</th>
+                                <th>Date inscription</th>
+                                <th></th>
+                                <th class="text-right">actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for converti in convertis %}
+                            <tr>
+                                <td>{{ converti.numero }}</td>
+                                <td>@{{ converti.instagram }}</td>
+                                <td>
+                                    {% if converti.avatar %}
+
+                                    <img class="img-fluid rounded-circle"
+                                        src="{{ vich_uploader_asset(converti, 'imageFile') | imagine_filter('medium_avatar') }}" width="50" height="50" />
+
+                                    {% else %}
+
+                                    <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/user.jpg') | imagine_filter('medium_avatar') }}" width="50" height="50" />
+
+                                    {% endif %}
+
+                                </td>
+                                <td>
+                                    <span class="badge badge-light border badge-pill">{{ converti.countRec }}</span>
+                                </td>
+                                <td>Le {{ converti.created ? converti.created|date('d/m/Y à H:s') : '' }}</td>
+                                <td>
+                                    <span class="badge badge-outline-{{ converti.listeAttente ? " warning" : 'primary'
+                                        }} badge-pill">
+                                        {{ converti.listeAttente ? "Liste d'attente" : 'Inscription' }}
+                                    </span>
+                                </td>
+                                <td class="text-right">
+
+                                    <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal"
+                                        data-target="#modal-{{ converti.id }}">
+                                        <i class="mdi mdi-library-books"></i>
+                                    </a>
+
+                                    {% include "admin/admin_convertis/composants/_modal.html.twig" %}
+
+                                    <a href="{{ path('admin_convertis_edit', {id: converti.id}) }}"
+                                        class="btn btn-outline-primary btn-sm">
+                                        <i class="mdi mdi-account-card-details"></i>
+                                    </a>
+
+                                    {% include "admin/admin_convertis/_delete_form.html.twig" %}
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="5">Aucune inscription</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <div class="pt-3 justify-content-center">
+                        {{ knp_pagination_render(convertis, null, {}, {
+                        'align': 'right',
+                        'size': 'medium',
+                        'rounded': true,
+                        }) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

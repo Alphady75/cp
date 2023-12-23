@@ -1,0 +1,50 @@
+[17-Apr-2023 12:33:42 UTC] PHP Warning:  require_once(/home/tbti5866/cplus.social/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tbti5866/cplus.social/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/tbti5866/cplus.social/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:44 UTC] PHP Warning:  require_once(/home/tbti5866/cplus.social/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tbti5866/cplus.social/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/tbti5866/cplus.social/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:49 UTC] PHP Warning:  require_once(/home/tbti5866/cplus.social/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tbti5866/cplus.social/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/tbti5866/cplus.social/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:51 UTC] PHP Warning:  require_once(/home/tbti5866/cplus.social/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /home/tbti5866/cplus.social/public/index.php on line 5
+[17-Apr-2023 12:33:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tbti5866/cplus.social/vendor/autoload_runtime.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/tbti5866/cplus.social/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/tbti5866/cplus.social/public/index.php on line 5
+[03-Jun-2023 01:50:45 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\UX\Autocomplete\AutocompleteBundle" not found in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php:131
+Stack trace:
+#0 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(382): App\Kernel->registerBundles()
+#1 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(766): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(190): Symfony\Component\HttpKernel\Kernel->preBoot()
+#3 /home/tbti5866/cplus.social/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#4 /home/tbti5866/cplus.social/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#5 /home/tbti5866/cplus.social/public/index.php(5): require_once('/home/tbti5866/...')
+#6 {main}
+  thrown in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php on line 131
+[03-Jun-2023 01:50:54 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\UX\Autocomplete\AutocompleteBundle" not found in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php:131
+Stack trace:
+#0 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(382): App\Kernel->registerBundles()
+#1 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(766): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(190): Symfony\Component\HttpKernel\Kernel->preBoot()
+#3 /home/tbti5866/cplus.social/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#4 /home/tbti5866/cplus.social/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#5 /home/tbti5866/cplus.social/public/index.php(5): require_once('/home/tbti5866/...')
+#6 {main}
+  thrown in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php on line 131
+[03-Jun-2023 01:51:36 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\UX\Autocomplete\AutocompleteBundle" not found in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php:131
+Stack trace:
+#0 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(382): App\Kernel->registerBundles()
+#1 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(766): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(190): Symfony\Component\HttpKernel\Kernel->preBoot()
+#3 /home/tbti5866/cplus.social/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php(35): Symfony\Component\HttpKernel\Kernel->handle()
+#4 /home/tbti5866/cplus.social/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\HttpKernelRunner->run()
+#5 /home/tbti5866/cplus.social/public/index.php(5): require_once('/home/tbti5866/...')
+#6 {main}
+  thrown in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php on line 131

@@ -1,0 +1,524 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Change d'ADN chaque semaine.. {% endblock %}
+
+{% block body %}
+
+<!-- Section bannière -->
+<section class="section-bannier" style="background-image: url('{{ asset('img/banniere.jpg') }}');">
+   <div class="caption">
+
+      <div class="text-left">
+         <h1 style="font-weight: bold!important;">Change d'ADN <br> chaque <span
+               class="badge badge-success rounded-pill"
+               style="font-weight: 600!important; font-size: 18px;">semaine</span></h1>
+      </div>
+
+      <div class="text-center">
+         <a href="#register-section" class="btn btn-rose btn-lg" style="font-weight: 600!important">Rejoins {{ appName
+            }}</a>
+      </div>
+
+      <div class="text-center">
+         <h2 style="font-weight: bold!important;">On arrive dans le jeu...</h2>
+      </div>
+
+   </div>
+</section>
+
+<!-- section service -->
+<section class="section-gametime" id="section-gametime">
+   <h2 class="text-center pt-2">Fais toi booker pendant que tu dors..</h2>
+
+   <div class="services-wrapper bg-green py-3 section-video">
+      <div class="container">
+         <div class="text-center position-relative">
+            <span class="badge text-dark bg-white radius capsule" style="font-weight: 600!important;">Capsules</span>
+         </div>
+         <div class="bg-white text-center details  position-relative">
+            <small class="text-center text text-dark">Juste 2 mecs qui créent une appli...</small>
+         </div>
+         <div class="row service-slider">
+
+            {% for video in videos %}
+            <div class="col">
+               <div class="service bg-white text-dark text-center" style="background-image: url({% if video.image %}{{ vich_uploader_asset(video, 'imageFile') | imagine_filter('medium_size') }}{% endif %});">
+                  <a href="#" class="js-modal-btn button" data-video-id="{{ video.url }}">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            {% endfor %}
+
+            {% if videos|length == 0 %}
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            {% elseif videos|length == 1 %}
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            {% elseif videos|length == 2 %}
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            {% elseif videos|length == 3 %}
+            <div class="col">
+               <div class="service bg-white text-dark text-center">
+                  <a href="#" class="js-modal-btn button">
+                     <i class="fa fa-play"></i>
+                  </a>
+               </div>
+            </div>
+            {% endif%}
+
+         </div>
+      </div>
+   </div>
+
+   <div class="w-80 section_space">
+      <div class="text-center bloc-rdv">
+         <p class="mbspace">Prends de <span class="badge bg-green rounded-pill vitesse"
+               style="font-weight: 600!important;">vitesse</span> ton inspiration <br> Trouve
+            la prestation
+            qui te plait..</p>
+
+         <p class="pb-2 m-0">Prends des RDVs sur <span class="badge bg-green rounded-pill"
+               style="font-weight: 600!important;">l'app</span></p>
+
+         <div class="details bg-green mt-2 p-0 mb-0">
+            <p class="p text-light p-0 m-0">
+               Coiffeuse, Nail Artist, Barber
+            </p>
+         </div>
+
+         <h2 class="pt-0 mt-0 bold">Retrouve-les sur {{ appName }}</h2>
+      </div>
+   </div>
+</section>
+
+<!-- Section flux -->
+<section class="section-flux section_space bg-white">
+   <div class="container">
+      <div class="">
+         <h2 class="text-left comming">
+            On arrive dans le jeu...
+         </h2>
+      </div>
+      <div class="row freelance-slider">
+         <div class="col">
+            <h3 class="text-center">
+               Laisse toi inspirer par le
+               <span class="text-green ">Flux</span>
+            </h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/1.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center"><span class="text-green">Des prestataires</span> tout proche</h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/2.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Change d’
+               <span class="text-green">ADN</span> chaque <span style="font-size: 19px;">semaine</span>.
+            </h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/3.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Trouve la <span class="text-green">prestation</span> qu'il te faut</h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/4.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Trouve la <span class="text-green">prestation</span> qu'il te faut</h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/5.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Créé des <span class="text-green">Collections</span>, Enregistre des <span
+                  class="text-green">Fleets</span></h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/6.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Créé des <span class="text-green">Collections</span>, Enregistre des <span
+                  class="text-green">Fleets</span></h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/7.png') }}">
+            </div>
+         </div>
+      </div>
+
+      <div class="block-btn-join text-center">
+         <a href="#register-section" class="btn btn-rose">Rejoins {{ appName }}</a>
+      </div>
+      <div style="height: 10px"></div>
+      <div class="media-hurt bg-white shadow">
+         <i class="fa fa-heart-o text-green"></i>
+      </div>
+      <div class="p-3 shadow radius text-center hurt-bock bg-white position-relative">
+         <div class="media">
+            <div class="media-body" id="prestataire-section">
+               <p style="font-size: 16px!important; font-weight: 500; margin-bottom: 0px;">
+                  Enregistre des Inspirations sur ton
+                  <span class="text-green">profil</span> <br>
+                  Prends des <span class="text-green">RDVs</span> sur l’app
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!--  Pas de prestataire sans prestation -->
+<section class="section-no-prestataire mt-0 pt-0">
+   <div class="container">
+      <div class="main w-90" style="margin-top: 30px; margin-bottom: 30px;">
+         <div class="border-green pb-0 mb-4 text-center radius bg-white font-weight-bold">
+            <p class="p-2 m-0 small">Pas de prestation sans prestataire ?</p>
+         </div>
+
+         <p class="m-0 mb-5">
+            <strong style="margin-left: 15px;">Si tu es..</strong> <span class="badge rounded-pill bg-green"
+               style="font-weight: bold!important; font-size: 18px; height: 37px !important; display: inline-flex; justify-content: center; align-items: center;">prestataire</span>
+            <br><br>
+            Coiffeuse,
+            Nailtec,
+            Barber
+            <span class="badge radius"
+               style="background: #edefef!important; font-weight: 500!important; font-size: 18px;"><strike>d'Insta</strike>
+               ?</span>
+         </p>
+
+         <p class="text-center m-0" style="font-size: 18px!important;">Rejoins ceux qui ont compris... <br> Fini les
+            <strong>annulations</strong> à la <strong>dernière minute</strong>
+         </p>
+
+         <p class="text-center p-0 mt-5 m-0"><strong>Envoi </strong><strong class="text-green">automatique</strong>
+         </p>
+         <div class="bg-green p-2 text-center radius w-90">
+            <p class="p-0 m-0" style="font-weight: bold!important;">Des Rappels de confirmation</p>
+         </div>
+         <p class="text-center bold" style="font-family: 'Avenir'!important;">aux utilisateurs <strong
+               class="text-green">la veille d'un RDV</strong></p>
+      </div>
+   </div>
+</section>
+
+<!-- Construis ta Vitrine -->
+<section class="section-construire-vitrine section_space bg-white">
+   <div class="container">
+      <div class="section-title" style="padding-bottom: 60px">
+         <h2 class="text-left hsmall" style="font-family: 'Avenir'!important">Fini les annulations de <br>dernières
+            minutes !</h2>
+         <div class="section-title-box">
+            <p class="text-left p-large" style="font-size: 17px!important;">
+               Tu le sais pas encore mais <span class="badge bg-green rounded-pill bold"
+                  style="font-size: 18px; height: 30px !important; display: inline-flex; justify-content: center; align-items: center;">avec
+                  {{ appName }}</span><br>
+               les utilisateurs qui prennent RDV avec
+               toi reçoivent un rappel qu’ils doivent
+               confirmer la veille.<br>
+               Sans quoi le RDV est
+               <strong class="bold" style="font-family: 'Avenir'!important">annulé</strong>.
+            </p>
+         </div>
+      </div>
+      <div class="section-title">
+         <h2 class="text-left hsmall" style="font-family: 'Avenir'!important">Gametime</h2>
+         <div class="section-title-box">
+            <p class="text-left p-large" style="font-size: 17px!important;">
+               Crée <strong class="bold" style="font-family: 'Avenir'!important">des prestations, des RDVs</strong> et
+               accède à une appli où se trouvent
+               des
+               <strong class="bold" style="font-family: 'Avenir'!important">utilisateurs</strong> à la recherche de tes
+               services.
+            </p>
+         </div>
+      </div>
+      <div class="row freelance-slider">
+         <div class="col">
+            <h3 class="text-center">Construis ta <span class="text-green">Vitrine..</span></h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/8.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center"> Des
+               <span class="text-green">Rappels envoyés</span>
+               pour tous tes RDVs..
+            </h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/9.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Crée tes <span class="text-green">Dispos</span> de la semaine..</h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/10.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center">Crée tes <span class="text-green">Dispos</span> de la semaine..</h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/11.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center" <span class="text-green">Plus d’annulation</span> pour tes RDVs d’Insta..
+            </h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/12.png') }}">
+            </div>
+         </div>
+         <div class="col">
+            <h3 class="text-center"><span class="text-green">{{ appName }} </span> simple..</h3>
+            <div class="freelancer">
+               <img src="{{ asset('img/13.png') }}">
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="block-btn-join text-center">
+      <a href="#register-section" class="btn btn-rose">Rejoins {{ appName }}</a>
+   </div>
+</section>
+
+<!-- Notification section -->
+<section class="section_notification">
+   <div class="w-90">
+      <div class="container">
+         <div class="row align-self-stretch">
+            <div class="col-lg-4">
+               <div class="bg-white radius shadow text-center bloc_notification">
+                  <img src="{{ asset('img/rappel.png') }}" alt="message" width="80">
+                  <h3 class="text-green" style="font-family: Avenir!important; font-weight: bold; margin: 18px 0px;">Pas
+                     d’annulation de <br>
+                     dernière minute..</h3>
+                  <p>Grâce aux rappels de confirmation, les utilisateurs doivent confirmer leurs RDVs au plus tard
+                     <span class="bold" style="font-family: 'Avenir'!important">12h avant</span>.
+                  </p>
+               </div>
+            </div>
+            <div class="col-lg-4">
+               <div class="bg-white radius shadow text-center bloc_notification midle">
+                  <img src="{{ asset('img/message.png') }}" alt="message" width="80">
+                  <h3 class="text-green" style="font-family: Avenir!important; font-weight: bold; margin: 18px 0px;">
+                     Moins de DMs, <br> gain de temps..</h3>
+                  <p>Enregistre tes Disponibilités et organise des RDVs sans devoir répondre à <strong class="bold"
+                        style="font-family: 'Avenir'!important">un
+                        tas de DMs</strong>.</p>
+               </div>
+            </div>
+            <div class="col-lg-4">
+               <div class="bg-white radius shadow text-center bloc_notification">
+                  <img src="{{ asset('img/client.png') }}" alt="message" width="80">
+                  <h3 class="text-green" style="font-family: Avenir!important; font-weight: bold; margin: 18px 0px;">De
+                     nouveaux clients..</h3>
+                  <p id="register-section">
+                     <strong class="bold" style="font-family: 'Avenir'!important">Trouve plus de clients </strong> et
+                     augmente ta
+                     visibilité en publiant tes prestations
+                     dans ta <span class="text-green">Vitrine</span>.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Register section -->
+<section class="section-pre-lancement shadow-sm bg-white border-bottom section_radius">
+   <div class="bg-green section_radius section_register">
+      <div class="container">
+
+         <div class="w-90">
+            <div class="bg-white radius">
+               <p class="text-dark text text-center p-2 bold">Rejoins le lancement de {{ appName }} !</p>
+            </div>
+
+            <p class="text-center d-block limite">
+               <span class="badge badge-light rounded-pill text-green bold"
+                  style="font-size: 18px; height: 35px !important; display: inline-flex; justify-content: center; align-items: center;">
+                  {% if cplus.soldOut %}
+                  <strike>limité</strike>
+                  {% else %}
+                  limité
+                  {% endif %}
+               </span>
+               <strong>
+                  {% if cplus.soldOut %}
+                  <strike>à 50 prestataires</strike>
+                  {% else %}
+                  à 50 prestataires
+                  {% endif %}
+               </strong>
+            </p>
+
+            {% if cplus.soldOut %}
+
+            <div class="text-center pb-3">
+               <strong style="font-size: 24px; position: relative; top: 2px;">Sold</strong> <span
+                  class="badge text-rose bg-white radius bold"
+                  style="font-size: 19px !important; padding: 0px 12px; height: 30px!important; display: inline-flex; justify-content: center; align-items: center;">out</span>
+            </div>
+
+            <div class="join bg-white bg-white border-0 text-center">
+               <p class="text-dark p-2 small">Inscris-toi sur la liste d’attente pour être notifié lors de l’ajout de
+                  nouvelles places :</p>
+            </div>
+
+            {% else %}
+
+            <div class="join bg-white bg-white border-0 text-center">
+               <p class="text-dark p-2 small">Rejoins les 50 premiers prestataires de <br> l’appli :</p>
+            </div>
+
+            {% endif %}
+
+            {{ form_start(form, {attr: {class: 'join-form m-0 pb-2'}}) }}
+            <div class="row">
+               <div class="col-6">
+                  <div class="">
+                     <div class="input-group radius bg-white mb-3">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text bg-transparent p-0 pl-2 border-0 pr-1"
+                              id="basic-addon1">@</span>
+                        </div>
+                        {{ form_widget(form.instagram) }}
+                     </div>
+                     {{ form_errors(form.instagram) }}
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-2 pr-1">
+                  <div class="input-group radius bg-white mb-3">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text bg-transparent p-0 pl-1 border-0 pr-1"
+                              id="basic-addon1">+</span>
+                        </div>
+                        {{ form_widget(form.indicatif) }}
+                     </div>
+                     {{ form_errors(form.indicatif) }}
+               </div>
+               <div class="col-5 p-0">
+                  <div class="">
+                     <div class="">
+                        {{ form_widget(form.numero) }}
+                        {{ form_errors(form.numero) }}
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="text-center">
+               <button type="submit" class="btn btn-rose w-80 btn-lg">
+                  {{ cplus.soldOut ? 'Rejoins la liste d’attente' : 'Rejoins nous !' }}
+               </button>
+            </div>
+            {{ form_end(form) }}
+         </div>
+
+      </div>
+   </div>
+
+   <!-- Register -->
+   <div class="container register pt-2">
+      <h3 class="text-left pl-3 bold mb-3" style="font-family: Avenir!important; font-size: 22px!important;">Ils nous
+         ont déjà rejoint..</h3>
+      {% if convertis|length > 0 %}
+      <div class="swiper sample-slider">
+         <div class="swiper-wrapper">
+            {% for converti in convertis %}
+            <div class="swiper-slide user-block">
+               {% if converti.avatar|length > 0 %}
+
+               <img class="img-thumbnail rounded-circle"
+                  src="{{ vich_uploader_asset(converti, 'imageFile') | imagine_filter('large_avatar') }}" width="80"
+                  height="80" style="border: none!important" />
+
+               {% else %}
+
+               <img class="img-thumbnail rounded-circle"
+                  src="{{ asset('img/user.jpg') | imagine_filter('large_avatar') }}" width="80" height="80"
+                  style="border: none!important" />
+
+               {% endif %}
+               <strong class="d-block">@<span class="text-green">{{ converti.instagram|u.truncate(10, '...') }}</span></strong>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+
+      {% else %}
+      <p>Aucun inscrit au pré-lancement de {{ appName }}</p>
+      {% endif %}
+   </div>
+
+</section>
+
+{% endblock %}

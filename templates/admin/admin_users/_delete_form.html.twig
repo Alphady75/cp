@@ -1,0 +1,6 @@
+<form method="post" class="d-inline" action="{{ path('admin_users_delete', {'id': user.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce compte?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+    <button class="btn btn-inverse-danger btn-sm">
+    <i class="mdi mdi-delete-forever"></i>
+    </button>
+</form>

@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        convertis:
+            uri_prefix: /uploads/images/convertis
+            upload_destination: '%kernel.project_dir%/public/uploads/images/convertis'
+
+        listeattente:
+            uri_prefix: /uploads/images/listeattente
+            upload_destination: '%kernel.project_dir%/public/uploads/images/listeattente'
+
+        videos_images:
+            uri_prefix: /uploads/images/videos_images
+            upload_destination: '%kernel.project_dir%/public/uploads/images/videos_images'

@@ -1,0 +1,26 @@
+[03-Jun-2023 01:49:53 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\UX\Autocomplete\AutocompleteBundle" not found in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php:131
+Stack trace:
+#0 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(382): App\Kernel->registerBundles()
+#1 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(766): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(128): Symfony\Component\HttpKernel\Kernel->preBoot()
+#3 /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Console/Application.php(166): Symfony\Component\HttpKernel\Kernel->boot()
+#4 /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Console/Application.php(72): Symfony\Bundle\FrameworkBundle\Console\Application->registerCommands()
+#5 /home/tbti5866/cplus.social/vendor/symfony/console/Application.php(171): Symfony\Bundle\FrameworkBundle\Console\Application->doRun()
+#6 /home/tbti5866/cplus.social/vendor/symfony/runtime/Runner/Symfony/ConsoleApplicationRunner.php(54): Symfony\Component\Console\Application->run()
+#7 /home/tbti5866/cplus.social/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#8 /home/tbti5866/cplus.social/bin/console(11): require_once('/home/tbti5866/...')
+#9 {main}
+  thrown in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php on line 131
+[03-Jun-2023 01:50:18 UTC] PHP Fatal error:  Uncaught Error: Class "Symfony\UX\Autocomplete\AutocompleteBundle" not found in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php:131
+Stack trace:
+#0 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(382): App\Kernel->registerBundles()
+#1 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(766): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /home/tbti5866/cplus.social/vendor/symfony/http-kernel/Kernel.php(128): Symfony\Component\HttpKernel\Kernel->preBoot()
+#3 /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Console/Application.php(166): Symfony\Component\HttpKernel\Kernel->boot()
+#4 /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Console/Application.php(72): Symfony\Bundle\FrameworkBundle\Console\Application->registerCommands()
+#5 /home/tbti5866/cplus.social/vendor/symfony/console/Application.php(171): Symfony\Bundle\FrameworkBundle\Console\Application->doRun()
+#6 /home/tbti5866/cplus.social/vendor/symfony/runtime/Runner/Symfony/ConsoleApplicationRunner.php(54): Symfony\Component\Console\Application->run()
+#7 /home/tbti5866/cplus.social/vendor/autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#8 /home/tbti5866/cplus.social/bin/console(11): require_once('/home/tbti5866/...')
+#9 {main}
+  thrown in /home/tbti5866/cplus.social/vendor/symfony/framework-bundle/Kernel/MicroKernelTrait.php on line 131

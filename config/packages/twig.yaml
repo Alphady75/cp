@@ -1,0 +1,19 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_themes: ['bootstrap_4_layout.html.twig']
+    #form_themes: ['bootstrap_4_Horizontal_layout.html.twig']
+    globals:
+        appName: 'C +'
+        appEmail: 'cplus@domaine.fr'
+        appPhone: '04 65 27 06 06'
+        currency: ' €'
+        ashtag: '#'
+        appConcepteur: "BAYE Conception"
+        concepteurSite: "https://www.bayeconception.com/"
+        app_environement: '%env(APP_ENV)%'
+        twilio_account_sid: '%env(TWILIO_ACCOUNT_SID)%'
+        twilio_auth_token: '%env(TWILIO_AUTH_TOKEN)%'
+
+when@test:
+    twig:
+        strict_variables: true

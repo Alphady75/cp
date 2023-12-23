@@ -1,0 +1,523 @@
+/** Font **/
+@font-face {
+   font-family: Avenir;
+   src: url(Font/AvenirNextLTPro-Medium.otf);
+}
+
+@font-face {
+   font-family: Avenir-bold;
+   src: url(Font/AvenirNextLTPro-Bold.otf);
+}
+
+@font-face {
+   font-family: Avenir-demi-bold;
+   src: url(Font/AvenirNextLTPro-Demi.otf);
+}
+
+@font-face {
+   font-family: Avenir-medium;
+   src: url(Font/AvenirNextLTPro-Medium.otf);
+}
+
+/** Color **/
+body {
+   font-size: 26px !important;
+   font-family: Avenir;
+   padding: 0;
+   padding-top: 120px;
+   margin: 0;
+}
+p{
+   font-size: 29px!important;
+}
+h1, h2 {
+   font-family: Avenir-bold;
+   font-weight: bold!important;
+   font-size: 30px!important;
+}
+h3 {
+   font-family: Avenir-demi-bold;
+   font-weight: bold!important;
+   font-size: 30px!important;
+}
+
+.p-large {
+   font-size: 16px;
+}
+
+.bold {
+   font-family: Avenir-bold;
+}
+.btn {
+   padding: 10px 30px !important;
+   font-weight: 800;
+}
+.text-green {
+   color: #06C75B;
+}
+
+.text-rose {
+   color: #FF42A1;
+}
+
+.rose-bg, .btn-rose {
+   background-color: #FF42A1;
+   font-weight: Avenir-demi-bold;
+   color: white;
+}
+
+.btn-green, .btn-rose {
+   font-size: 29px;
+   border-radius: 40px !important;
+}
+
+.btn-rose {
+   font-family: Avenir-demi-bold;
+   padding: 20px!important;
+}
+
+.btn {
+   border: none;
+}
+
+.bloc-logo {
+   position: relative;
+   width: 60px;
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+}
+
+.py-3, .pb-3 {
+   border: none !important;
+}
+
+.bloc-logo img {
+   width: 100%;
+}
+
+.w-90 {
+   width: 90%;
+   margin: auto;
+}
+
+.w-80 {
+   width: 80%;
+   margin: auto;
+}
+
+.btn-rose, .btn-green {
+   border-radius: 20px;
+   font-size: 28px!important;
+}
+
+.btn-green,
+.bg-green {
+   background-color: #06C75B;
+   color: white;
+}
+
+.radius {
+   border-radius: 30px !important;
+}
+
+.section_radius {
+   border-radius: 40px;
+}
+
+.border-green {
+   border: 1px solid #06C75B !important;
+}
+
+.section-title {
+   padding-bottom: 30px;
+   text-align: center;
+}
+
+.section_space {
+   padding: 30px 0 !important;
+}
+
+section .btn-rose {
+   margin-top: 20px;
+   padding: 20px 45px !important;
+   font-size: 18px;
+}
+
+section .btn-green {
+   padding: 20px 30px !important;
+}
+
+.block-btn-join .btn {
+   font-family: Avenir-demi-bold;
+}
+
+.hurt-bock {
+   margin-top: 30px;
+}
+
+.media-hurt {
+   position: relative;
+   top: -60px;
+   background: white;
+   z-index: 9;
+   width: 90px;
+   height: 90px;
+   line-height: 95px;
+   font-size: 2.5rem;
+   text-align: center;
+   border-radius: 10px;
+}
+.section-title h3 {
+   width: 90%;
+   text-align: center !important;
+   margin: auto;
+}
+
+.section-title .section-title-box {
+   width: 90%;
+   margin: auto;
+}
+.alert{
+   text-align: center;
+}
+.badge {
+   padding: 0 15px;
+   height: 30px !important;
+   line-height: 30px;
+}
+/*************** Navbar ***************/
+.bottomNav {
+   padding: 15px;
+}
+
+
+.navbar-nav .btn{
+   padding: 15px!important;
+}
+.navbar-toggler {
+   display: block;
+   width: 40px;
+   height: 40px;
+   padding: 0;
+   border: none;
+   position: relative;
+   z-index: 100;
+}
+
+.navbar-toggler span {
+   height: 3px;
+   width: 30px;
+   background: #333;
+   display: block;
+   margin: 5px auto;
+}
+
+.osahan-nav-mid .navbar-collapse{
+   background: #06C75B!important;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 30px;
+   position: fixed;
+   padding: 20% 0;
+   top: 0;
+   right: 0;
+   left: 0;
+}
+.collapse-btn{
+   position: absolute;
+   right: 20px;
+   font-weight: normal!important;
+   background: #FF42A1;
+   border-radius: 20px;
+   text-align: center;
+   color: white;
+   top: 20px;
+}
+.bottomNav {
+   padding: 15px 5px;
+}
+
+.bottomNav a {
+   position: relative;
+   bottom: 0px;
+   width: 100% !important;
+}
+.bottomNav .btn-rose{
+   padding: 20px 10px!important;
+}
+.bloc-logo {
+   position: relative;
+   top: -40px;
+   margin: auto;
+   width: 100px;
+   height: 100px;
+   line-height: 100px;
+   background: #06C75B;
+}
+
+.bloc-logo img {
+   width: 100%;
+}
+
+/************ section bannière *****************/
+.section-bannier {
+   height: 90vh;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-position-x: 0px;
+   background-position-y: 0;
+   position: relative;
+}
+.section-bannier .caption {
+   background-color: rgba(0, 0, 0, .3);
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   padding: 30px;
+   bottom: 0;
+}
+
+.section-bannier .caption h1 {
+   color: white;
+   font-family: Avenir-demi-bold;
+   font-size: 35px;
+   padding: 40px 0 40px 0;
+}
+.section-bannier .caption h2 {
+   position: absolute;
+   font-size: 35px;
+   bottom: 30px;
+   z-index: 3;
+   color: white;
+}
+
+.section-bannier .btn-rose{
+   width: 262px;
+   margin-top: 20%;
+   border-radius: 25px!important;
+   font-size: 29px;
+}
+/************ section-gametime *****************/
+.section-gametime h2 {
+   font-family: Avenir-medium;
+   font-size: 29px !important;
+}
+
+.section-gametime .capsule {
+   width: 182px;
+   height: 68px;
+   line-height: 68px;
+   font-size: 31px;
+   margin-bottom: 30px;
+   margin: auto;
+   font-family: Avenir-demi-bold;
+}
+
+.section-gametime .details {
+   color: #000000;
+   margin: 30px 0;
+   height: 48px;
+   line-height: 28px;
+   font-family: Avenir-demi-bold;
+}
+
+.section-gametime .details p {
+   font-size: 18px !important;
+}
+
+.section-gametime .service-slider .service {
+   width: 100% !important;
+   background-size: contain;
+   object-fit: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 250px;
+   line-height: 180px;
+}
+
+.section-gametime .service-slider .service .box {
+   width: 45px;
+   height: 45px;
+   line-height: 40px;
+   padding-left: 5px;
+   margin-top: 45%;
+   background: #06C75B;
+   display: inline-block !important;
+   border-radius: 50%;
+   position: relative;
+   text-align: center;
+}
+
+.section-gametime .service-slider .service .box i {
+   font-size: 20px;
+   margin: auto;
+}
+
+.section-gametime .services-wrapper {
+   border-top-left-radius: 35%;
+   border-top-right-radius: 35%;
+   border-bottom-left-radius: 30px;
+   border-bottom-right-radius: 30px;
+   padding: 5%;
+}
+
+/************ section-flux *****************/
+
+/************ section-prestataire-proche *****************/
+
+/************ section-rendez-vous *****************/
+
+/************ section-recherche-prestaires *****************/
+
+/************ section-create-collection *****************/
+
+/************ section-no-prestataire *****************/
+
+/************ section-construire-vitrine *****************/
+
+/************ section-rappel-rdv *****************/
+
+/************ section-disponibilite *****************/
+
+/************ section-rdv-instagram *****************/
+
+/************ section-cplus *****************/
+
+/************ section_notification *****************/
+.section_notification{
+   padding-top: 30px;
+}
+
+/************ section-pre-lancement *****************/
+.section-pre-lancement{
+   padding-bottom: 50px;
+}
+.register strong{
+   font-size: 18px!important;
+}
+
+.recommended a img.img-fluid {
+   height: auto;
+   border: 1px solid transparent;
+   border-radius: 30px !important;
+   object-fit: cover;
+   margin: auto;
+   margin-bottom: 0px;
+   width: 100%;
+   border-radius: 4px 4px 0px 0;
+   box-shadow: 0 1px 2px rgba(85, 82, 82, 0.2);
+}
+
+.freelance-slider .freelancer {
+   height: auto!important;
+   border: 1px solid transparent;
+   border-radius: 30px !important;
+   object-fit: cover;
+   margin: auto;
+   margin-bottom: 30px;
+   width: 95%!important;
+   border-radius: 30px!important;
+   box-shadow: 0 1px 2px rgba(85, 82, 82, 0.2);
+}
+
+.freelance-slider .freelancer img {
+   height: 100%!important;
+   width: 100%!important;
+   border-radius: 30px !important;
+   object-fit: cover;
+   margin: auto;
+   margin-bottom: 0px;
+   border-radius: 4px 4px 0px 0;
+   box-shadow: 0 1px 2px rgba(85, 82, 82, 0.2);
+}
+
+.recent-slider > div {
+   margin-bottom: 30px;
+   height: auto!important;
+}
+
+.recent-slider > div img {
+   width: 100%!important;
+   height: 100%!important;
+}
+
+.prestataire-slider img {
+   width: 80px !important;
+   height: 80px !important;
+   padding: 0.25rem;
+   background-color: #fff;
+   border: 1px solid transparent;
+   border-radius: 50%;
+   display: block;
+   margin: auto;
+}
+
+.section_register {
+   padding-top: 5%;
+   padding-bottom: 0!important;
+}
+
+.section_notification .bloc_notification {
+   margin: auto;
+   margin-bottom: 30px;
+   width: 100%;
+   padding: 35px !important;
+   z-index: 2;
+   position: relative;
+}
+
+.copyright {
+   padding-top: 0;
+   border-top: 0;
+}
+
+.copyright .social {
+   margin: auto;
+   font-size: 2rem;
+   border: 0 !important;
+   color: black;
+}
+
+.copyright .social li a {
+   border: 0 !important;
+   margin-right: 15px;
+   color: black;
+}
+
+.section_space {
+   padding: 5% 0 !important;
+}
+
+.form-control {
+   font-size: 16px;
+   height: 48px;
+}
+
+footer .logo {
+   width: 90px;
+   height: 90px;
+   padding: 10px;
+   border: 2px solid black;
+   border-radius: 50%;
+   line-height: 70px;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   width: 100%;
+}
+.slick-dots li button:before {
+   font-size: 12px;
+}
+
+.slick-dots li button {
+   width: 20px;
+}
+
+.slick-dots li {
+   margin: 0;
+}

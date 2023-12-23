@@ -1,0 +1,42 @@
+<!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item {{ app.request.attributes.get('_route') == 'admin_dashboard' ? 'active' : '' }}">
+      <a class="nav-link" href="{{ path('admin_dashboard') }}">
+        <i class="icon-grid menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item {{ app.request.attributes.get('_route') == 'admin_convertis_index' ? 'active' : '' }}">
+      <a class="nav-link" href="{{ path('admin_convertis_index') }}">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Convertis / inscrits</span>
+      </a>
+    </li>
+    <li class="nav-item {{ app.request.attributes.get('_route') == 'admin_videos_index' ? 'active' : '' }}">
+      <a class="nav-link" href="{{ path('admin_videos_index') }}">
+        <i class="icon-video menu-icon"></i>
+        <span class="menu-title">Vidéos</span>
+      </a>
+    </li>
+    <li class="nav-item {{ app.request.attributes.get('_route') == 'admin_messages' ? 'active' : '' }}">
+      <a class="nav-link" href="{{ path('admin_messages') }}">
+        <i class="icon-bell menu-icon"></i>
+        <span class="menu-title">Messages d'alertes</span>
+      </a>
+    </li>
+    <li class="nav-item {{ app.request.attributes.get('_route') == 'admin_users_index' ? 'active' : '' }}">
+      <a class="nav-link" href="{{ path('admin_users_index') }}">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Comptes utilisateurs</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-danger" href="">
+        <i class="icon-power menu-icon"></i>
+        <span class="menu-title">Déconnexion</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- partial -->

@@ -1,0 +1,90 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Comptes utilisateurs{% endblock %}
+
+{% block body %}
+<div class="card">
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <h2 class="card-title mb-0">Comptes utilisateurs</h2>
+                <p>
+                    ({{ users.getTotalItemCount }})
+                    Utilisateur{{ users.getTotalItemCount > 0 ? 's' : ''}}
+                </p>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="#" data-toggle="modal" data-target="#modalForm" class="btn btn-primary">
+                    Nouveau compte
+                </a>
+
+                {% include "admin/admin_users/composants/_form_modal.html.twig" %}
+
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="" class="display expandable-table table-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th></th>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>#{{ user.id }}</td>
+                        <th>
+                            <img src="{{ asset('img/user.jpg') | imagine_filter('large_avatar') }}"
+                                class="rounded-circle" width="50" alt="{{ user.email }}">
+                        </th>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            {% for role in user.roles %}
+
+                                {% if role == 'ROLE_ADMIN' %}
+                                    <span class="badge text-primary border border-primary rounded-pill">
+                                        ADMINISTRATEUR
+                                    </span>
+                                {% endif %}
+                            
+                            {% endfor %}
+                        </td>
+                        <td class="text-right">
+                            <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal"
+                                data-target="#modal-{{ user.id }}">
+                                <i class="mdi mdi-library-books"></i>
+                            </a>
+
+                            {% include "admin/admin_users/composants/_profil.html.twig" %}
+
+                            <a href="{{ path('admin_users_edit', {'id': user.id}) }}"
+                                class="btn btn-light btn-sm">
+                                <i class="mdi mdi-account-edit"></i>
+                            </a>
+
+                            {{ include('admin/admin_users/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4">Aucun compte</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="pt-3 justify-content-center">
+                {{ knp_pagination_render(users, null, {}, {
+                'align': 'right',
+                'size': 'medium',
+                'rounded': true,
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,721 @@
+/** Font **/
+html {
+   scroll-behavior: smooth;
+}
+
+@font-face {
+   font-family: Avenir;
+   src: url(Font/AvenirNextLTPro-Medium.otf);
+}
+
+@font-face {
+   font-family: Avenir-bold;
+   src: url(Font/AvenirNextLTPro-Bold.otf);
+}
+
+@font-face {
+   font-family: Avenir-demi-bold;
+   src: url(Font/AvenirNextLTPro-Demi.otf);
+}
+
+@font-face {
+   font-family: Avenir-medium;
+   src: url(Font/AvenirNextLTPro-Medium.otf);
+}
+
+/** Color **/
+body {
+   font-size: 26px !important;
+   font-family: Avenir;
+   padding: 0;
+   padding-top: 60px;
+   margin: 0;
+}
+
+p {
+   font-size: 29px !important;
+}
+
+h1, h2 {
+   font-family: Avenir-medium;
+   font-size: 30px !important;
+}
+
+h2.comming {
+   margin-bottom: 35px;
+   margin-left: 10px;
+   padding-top: 80px;
+   font-family: Avenir-bold!important;
+}
+
+h3 {
+   font-family: Avenir-medium;
+   font-size: 30px !important;
+}
+
+.p-large {
+   font-size: 16px;
+}
+
+.bold {
+   font-family: Avenir-bold;
+   font-weight: bold;
+}
+
+.btn {
+   padding: 10px 30px !important;
+   font-weight: 100 !important;
+}
+
+.text-green {
+   color: #06C75B;
+}
+
+.text-rose {
+   color: #FF42A1;
+}
+.rose-bg, .btn-rose {
+   background-color: #FF42A1;
+   font-weight: 200 !important;
+   color: white;
+}
+
+.btn-green, .btn-rose {
+   font-size: 29px;
+   border-radius: 40px !important;
+}
+
+.btn-rose {
+   padding: 20px !important;
+}
+
+.btn {
+   border: none;
+}
+
+.bloc-logo {
+   position: relative;
+   width: 60px;
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+}
+
+.py-3, .pb-3 {
+   border: none !important;
+}
+
+.bloc-logo img {
+   width: 99%;
+   border-radius: 10px;
+}
+
+.w-90 {
+   width: 90%;
+   margin: auto;
+}
+
+.w-80 {
+   width: 80%;
+   margin: auto;
+}
+
+.btn-green,
+.bg-green {
+   background-color: #06C75B;
+   color: white;
+}
+
+.radius {
+   border-radius: 30px !important;
+}
+
+.section_radius {
+   border-radius: 40px;
+}
+
+.border-green {
+   border: 1px solid #06C75B !important;
+}
+
+.section-title {
+   padding-bottom: 20px;
+   text-align: center;
+}
+
+.section_space {
+   padding: 30px 0 !important;
+}
+
+section .btn-rose {
+   margin-top: 20px;
+   padding: 20px 45px !important;
+   font-size: 18px;
+}
+
+section .btn-green {
+   padding: 20px 30px !important;
+}
+
+.block-btn-join .btn {
+   font-family: Avenir-demi-bold;
+}
+
+.hurt-bock {
+   margin-top: 30px;
+}
+
+.media-hurt {
+   position: relative;
+   top: -60px;
+   background: white;
+   z-index: 9;
+   width: 90px;
+   height: 90px;
+   line-height: 95px;
+   font-size: 2.5rem;
+   text-align: center;
+   border-radius: 10px;
+}
+
+.section-title h3 {
+   width: 90%;
+   text-align: center !important;
+   margin: auto;
+}
+
+.section-title .section-title-box {
+   width: 90%;
+   margin: auto;
+}
+
+.alert {
+   text-align: center;
+}
+
+.badge {
+   padding: 0 8px;
+   height: 25px !important;
+   line-height: 25px;
+   font-weight: 200 !important;
+}
+
+/*************** Navbar ***************/
+.bottomNav {
+   padding: 15px;
+}
+
+.radius-bottom {
+   position: relative;
+   margin-top: -10px !important;
+   height: 200px;
+   border-bottom-right-radius: 70px;
+   border-bottom-left-radius: 70px;
+   background-color: #06C75B;
+}
+
+.navbar .copyright {
+   width: 100%;
+}
+
+.navbar-nav .btn {
+   padding: 15px !important;
+   font-size: 20px;
+   font-family: Avenir-demi-bold;
+   font-weight: bold !important;
+}
+
+.navbar-toggler {
+   display: block;
+   width: 40px;
+   height: 40px;
+   padding: 0;
+   border: none;
+   position: relative;
+   z-index: 100;
+}
+
+.navbar-toggler span {
+   height: 4px;
+   width: 30px;
+   background: #000;
+   display: block;
+   margin: 5px auto;
+}
+
+.osahan-nav-mid .navbar-collapse {
+   background: #06C75B !important;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 30px;
+   position: fixed;
+   padding: 20% 0;
+   top: 0;
+   right: 0;
+   z-index: 2 !important;
+   left: 0;
+}
+
+.navbar .navbar-nav {
+   z-index: 9000 !important;
+}
+
+.navbar-collapse footer {
+   position: fixed;
+   display: block;
+   height: 50%;
+   padding: 40% 0 0;
+   z-index: -10 !important;
+   right: 0;
+   bottom: 0;
+   left: 0;
+}
+
+.navbar-collapse footer .nav {
+   font-size: 3rem;
+   color: #000 !important;
+}
+
+.navbar-collapse footer .nav li a {
+   color: #000 !important;
+   margin-right: 15px;
+}
+
+.collapse-btn {
+   position: absolute;
+   right: 20px;
+   font-weight: normal !important;
+   background: #FF42A1;
+   border-radius: 20px;
+   text-align: center;
+   color: white;
+   top: 20px;
+}
+
+.bottomNav {
+   padding: 15px 5px;
+}
+
+.bottomNav a {
+   position: relative;
+   bottom: 0px;
+   width: 100%;
+}
+
+.bottomNav .btn-rose {
+   padding: 20px 10px !important;
+   font-weight: bold !important;
+}
+
+.bloc-logo {
+   position: relative;
+   top: -40px;
+   margin: auto;
+   width: 100px !important;
+   height: 100px;
+   line-height: 100px;
+   background: #06C75B;
+}
+
+.bloc-logo img {
+   width: 100%;
+}
+
+/************ section bannière *****************/
+.section-bannier {
+   height: 90vh;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-position-x: 0px;
+   background-position-y: 0;
+   position: relative;
+}
+
+.section-bannier .caption {
+   background-color: rgba(0, 0, 0, .2);
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   padding: 30px;
+   bottom: 0;
+}
+
+.section-bannier .caption h1 {
+   color: white;
+   font-size: 35px;
+   margin-top: 10%;
+   padding: 40px 0 40px 0;
+}
+
+.section-bannier .caption h2 {
+   position: absolute;
+   font-size: 35px;
+   bottom: 10%;
+   z-index: 3;
+   color: white;
+}
+
+.section-bannier .btn-rose {
+   margin-top: 5%;
+   padding: 10px 35px !important;
+   border-radius: 15px !important;
+   font-size: 29px;
+}
+
+/************ section-gametime *****************/
+.section-gametime h2 {
+   font-family: Avenir-medium;
+   font-size: 18px !important;
+}
+
+.section-gametime p.mbspace {
+   margin-bottom: 40px;
+}
+
+.section-gametime .section_space h2 {
+   font-size: 20px !important;
+}
+
+.section-gametime .section_space {
+   padding-top: 50px !important;
+   padding-bottom: 60px !important;
+}
+
+.section-gametime .section_space .badge.bg-green {
+   font-size: 18px !important;
+}
+
+.section-gametime .capsule {
+   text-align: center;
+   height: auto !important;
+   margin-top: 10px 0;
+   position: relative;
+   top: -10px;
+   padding: 5px 15px;
+   font-size: 18px;
+}
+
+.section-gametime .details {
+   position: relative;
+   top: -10px;
+}
+
+.details {
+   margin: 20px 0;
+   height: 35px;
+   line-height: 35px;
+   font-family: Avenir-demi-bold;
+   border-radius: 20px;
+}
+
+.section-gametime .services-wrapper {
+   border-bottom-left-radius: 30px;
+   border-bottom-right-radius: 30px;
+   border-top-left-radius: 15%;
+   border-top-right-radius: 15%;
+   padding: 5%;
+   position: relative;
+   margin-top: 7%;
+   z-index: 1;
+}
+
+.section-gametime .services-wrapper::before {
+   content: '';
+   display: inline-block;
+   z-index: 0;
+   left: 0;
+   right: 0;
+   top: -6%;
+   position: absolute;
+   height: 33%;
+   -moz-border-radius: 7.5px;
+   -webkit-border-radius: 7.5px;
+   border-radius: 100%;
+   background-color: #06C75B;
+}
+
+.section-gametime .details p {
+   font-size: 20px !important;
+   padding: 0;
+   margin: 0;
+}
+
+.section-gametime .service-slider .service {
+   width: 100% !important;
+   height: 250px;
+   line-height: 180px;
+}
+
+.section-gametime .service-slider .service .box {
+   width: 45px;
+   height: 45px;
+   line-height: 46px;
+   padding-left: 5px;
+   margin-top: 45%;
+   background: #06C75B;
+   display: inline-block !important;
+   border-radius: 50%;
+   position: relative;
+   text-align: center;
+}
+
+.section-gametime .service-slider .service .box i {
+   font-size: 20px;
+   color: #000000 !important;
+   margin: auto;
+}
+
+.slick-dots li.slick-active {
+   width: 20px !important;
+   background: #06C75B;
+   border-radius: 12px;
+   height: 12px;
+}
+
+.slick-dots li.slick-active button {
+   height: 12px !important;
+}
+
+.slick-dots li.slick-active button:before {
+   color: transparent !important;
+   width: 20px !important;
+}
+
+.section-gametime .slick-dots li.slick-active {
+   background: black !important;
+}
+
+/************ section-flux *****************/
+
+/************ section-prestataire-proche *****************/
+
+/************ section-rendez-vous *****************/
+
+/************ section-recherche-prestaires *****************/
+
+/************ section-create-collection *****************/
+
+/************ section-no-prestataire *****************/
+
+/************ section-construire-vitrine *****************/
+
+/************ section-rappel-rdv *****************/
+
+/************ section-disponibilite *****************/
+
+/************ section-rdv-instagram *****************/
+
+/************ section-cplus *****************/
+
+/************ section_notification *****************/
+.section_notification {
+   padding-top: 30px;
+}
+
+/************ section-pre-lancement *****************/
+.section-pre-lancement {
+   padding-bottom: 50px;
+   border-bottom: 1px solid #333;
+   border-radius: 0;
+}
+
+.register strong {
+   font-size: 18px !important;
+}
+
+.join-form input {
+   color: #333 !important;
+}
+
+#convertis_indicatif {
+   border-radius: 5px !important;
+}
+
+.join-form .form-group {
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
+.recommended a img.img-fluid {
+   height: auto;
+   border: 1px solid transparent;
+   border-radius: 30px !important;
+   object-fit: cover;
+   margin: auto;
+   margin-bottom: 0px;
+   width: 100%;
+   border-radius: 4px 4px 0px 0;
+   box-shadow: 0 1px 2px rgba(85, 82, 82, 0.2);
+}
+
+.freelance-slider .col {
+   margin-bottom: 0px;
+}
+
+.freelance-slider .col h3 {
+   margin-bottom: 10px;
+}
+
+.freelance-slider .freelancer {
+   height: auto !important;
+   border: 1px solid transparent;
+   border-radius: 30px !important;
+   object-fit: cover;
+   margin: auto;
+   margin-bottom: 0px;
+   width: 95% !important;
+   border-radius: 30px !important;
+   box-shadow: 0 1px 2px rgba(85, 82, 82, 0.2);
+}
+
+.freelance-slider .freelancer img {
+   height: 100% !important;
+   width: 100% !important;
+   border-radius: 30px !important;
+   object-fit: cover;
+   margin: auto;
+   margin-bottom: 8px;
+   border-radius: 4px 4px 0px 0;
+   box-shadow: 0 1px 2px rgba(85, 82, 82, 0.2);
+}
+
+.recent-slider>div {
+   margin-bottom: 30px;
+   height: auto !important;
+}
+
+.recent-slider>div img {
+   width: 100% !important;
+   height: 100% !important;
+}
+
+.prestataire-slider img {
+   width: 80px !important;
+   height: 80px !important;
+   padding: 0.25rem;
+   background-color: #fff;
+   border: 1px solid transparent;
+   border-radius: 50%;
+   display: block;
+   margin: auto;
+}
+
+.section_register {
+   position: relative;
+   top: -70px;
+   border-radius: 60px;
+   padding-top: 30px;
+   padding-bottom: 0px;
+   margin-bottom: 10px;
+   z-index: 0;
+}
+
+.section_notification .bloc_notification {
+   margin: auto;
+   margin-bottom: 30px;
+   width: 100%;
+   padding: 8px 14px 5px !important;
+   z-index: 2;
+   position: relative;
+}
+
+.copyright {
+   padding-top: 0;
+   border-top: 0;
+}
+
+.copyright .social {
+   margin: auto;
+   font-size: 2rem;
+   border: 0 !important;
+   color: black;
+   width: 68%;
+}
+
+.copyright .social li a {
+   border: 0 !important;
+   font-size: 3rem;
+   margin-right: 20px !important;
+   color: black;
+}
+
+.section_space {
+   padding: 5% 0 !important;
+}
+
+.form-control {
+   font-size: 16px;
+   height: 48px;
+}
+
+footer {
+   background: #e9f9ec;
+}
+
+footer h3 {
+   display: block !important;
+   margin: auto;
+   margin-bottom: 10px;
+}
+
+footer .logo {
+   width: 90px;
+   height: 90px;
+   padding: 10px;
+   border: 2px solid black;
+   border-radius: 50%;
+   line-height: 70px;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   width: 100%;
+}
+
+.slick-dotted.slick-slider {
+   margin-bottom: 55px!important;
+}
+
+.slick-dots {
+   bottom: -45px!important;
+}
+
+.slick-dots li button:before {
+   font-size: 12px;
+}
+
+.slick-dots li button {
+   width: 20px;
+}
+
+.slick-dots li {
+   margin: 0;
+}
+
+.slick-list div img{
+   object-fit: contain!important;
+}
+.service .js-modal-btn {
+   background-color: #06c75b;
+   border-radius: 50%;
+   color: #000;
+   display: inline-block;
+   height: 40px;
+   line-height: 40px;
+   margin: 75% auto 0;
+   position: relative;
+   text-align: center;
+   width: 40px;
+}
+.user-block{
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   width: 100px;
+}
+.user-block strong{
+   font-size: .8em!important;
+}

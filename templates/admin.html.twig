@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Espace admin{% endblock %}</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{{ asset('themes/admin/vendors/feather/feather.css') }}">
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{{ asset('themes/admin/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/admin/vendors/ti-icons/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/admin/vendors/css/vendor.bundle.base.css') }}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{{ asset('themes/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/admin/vendors/ti-icons/css/themify-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('themes/admin/js/select.dataTables.min.css') }}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('themes/admin/css/vertical-layout-light/style.css') }}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{ asset('img/logo-miniature-web.PNG') }}" type="image/x-icon">
+    <style>
+        .input-group.rounded,
+        input.rounded,
+        select.rounded {
+            border-radius: 15px !important;
+        }
+
+        .modal .table td,
+        .modal .table th {
+            padding: 5px 0 !important;
+        }
+
+        .turbo-progress-bar {
+            height: 5px;
+            background-color: #06C75B !important;
+        }
+
+        .form-check .form-check-label {
+            margin-left: 0 !important;
+        }
+
+        .ts-wrapper.multi .ts-control [data-value] {
+            background-color: #06C75B !important;
+            border-color: #06C75B !important;
+            background-image: linear-gradient(180deg, #06C75B, #06C75B) !important;
+        }
+
+        .ts-wrapper.plugin-remove_button:not(.rtl) .item .remove {
+            border-left: 1px solid #06C75B !important;
+            margin-left: 6px;
+        }
+        .admin-card .card{
+            border-radius: 10px!important;
+        }
+        .admin-card .card .card-body{
+            padding: 10px!important;
+        }
+        .admin-card .card .card-body p{
+            line-height: 10px!important;
+        }
+        .vich-image img{
+            display: block;
+            margin-top: 30px;
+            border-radius: 50%;
+            border: 1px solid rgb(240, 240, 240);
+        }
+        .text-rose{
+            color: #FF42A1;
+        }
+        
+    </style>
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+
+<body data-turbo="false">
+    <div class="container-scroller">
+
+        <!-- Header -->
+
+        {% include "partials/admin/_header.html.twig" %}
+
+        <div class="container-fluid page-body-wrapper">
+
+            <!-- Partial -->
+            {% include "partials/admin/_partial.html.twig" %}
+
+            <!-- Sidebar -->
+            {% include "partials/admin/_sidebar.html.twig" %}
+
+            <div class="main-panel">
+
+                {% include "partials/_flash.html.twig" %}
+
+                <div class="content-wrapper">
+
+                    {% block body %}{% endblock %}
+
+                </div>
+
+                <!-- Footer -->
+                {% include "partials/admin/_footer.html.twig" %}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- plugins:js -->
+    <script src="{{ asset('themes/admin/vendors/js/vendor.bundle.base.js') }}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{{ asset('themes/admin/vendors/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('themes/admin/vendors/datatables.net/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('themes/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ asset('themes/admin/js/dataTables.select.min.js') }}"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{{ asset('themes/admin/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('themes/admin/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('themes/admin/js/template.js') }}"></script>
+    <script src="{{ asset('themes/admin/js/settings.js') }}"></script>
+    <script src="{{ asset('themes/admin/js/todolist.js') }}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{{ asset('themes/admin/js/dashboard.js') }}"></script>
+
+    <!-- Canva -->
+    <script src="{{ asset('themes/admin/vendors/canvasjs/canvasjs-chart-3.7.6/canvasjs.min.js') }}"></script>
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    <script>
+		// Add the following code if you want the name of the file appear on select
+		$(".custom-file-input").on("change", function () {
+			var fileName = $(this).val().split("\\").pop();
+			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		});
+	</script>
+</body>
+</html>

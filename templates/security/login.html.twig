@@ -1,0 +1,54 @@
+{% extends 'auth.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+
+<div class="col-lg-4 mx-auto">
+    <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+        <div class="brand-logo">
+            <img src="{{ asset('img/logo-trans.png') }}" width="90" height="90" class="rounded-circle" alt="logo">
+        </div>
+        <h4>Bonjour! Commençons</h4>
+        <h6 class="font-weight-light">Connectez-vous pour continuer.</h6>
+        <form class="pt-3" method="post">
+
+            {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+            <div class="mb-3">
+                Vous êtes connecté en tant que {{ app.user.email }}, 
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                    class="form-control form-control-lg rounded" placeholder="Adresse e-mail..." autocomplete="email" required autofocus>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="inputPassword" class="form-control form-control-lg rounded"
+                    autocomplete="current-password" placeholder="Mot de passe..." required>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            </div>
+            <div class="my-2 d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <label class="form-check-label text-muted">
+                        <input type="checkbox" name="_remember_me" class="form-check-input">
+                        Restez connecter
+                    </label>
+                </div>
+                <a href="{{ path('app_forgot_password_request') }}" class="auth-link text-black">J'ai oublié mon mot de passe!</a>
+            </div>
+            <div class="mb-2">
+                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                    Connexion
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+<form method="post" class="d-inline" action="{{ path('admin_convertis_delete', {'id': converti.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette inscription?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ converti.id) }}">
+    <button class="btn btn-inverse-danger btn-fw btn-sm"><i class="mdi mdi-delete-forever"></i></button>
+</form>

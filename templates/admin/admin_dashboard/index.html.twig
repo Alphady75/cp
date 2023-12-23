@@ -1,0 +1,242 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="row">
+            <div class="col-12 col-xl-5 mb-4 mb-xl-0">
+                <h3 class="font-weight-bold">Bienvenu {{ app.user.nom ~ ' ' ~ app.user.prenom }}</h3>
+                <h6 class="font-weight-normal mb-0">Tous le système fonctionne correctement</span></h6>
+            </div>
+            <div class="col-xl-7">
+                {{ form_start(visiteForm) }}
+                <div class="row align-items-baseline">
+                    <div class="col-6 col-sm-3 ml-auto">
+                        {{ form_row(visiteForm.minDate) }}
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        {{ form_row(visiteForm.maxDate) }}
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <button type="submit" class="btn btn-primary btn-sm btn-block">
+                            <i class="mdi mdi-filter-outline"></i> Go
+                        </button>
+                    </div>
+                </div>
+                {{ form_end(visiteForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4 admin-card">
+
+    <div class="col-6 col-md-2 mb-4 stretch-card transparent">
+        <div class="card card-light-blue">
+            <div class="card-body">
+                <p class="mb-4">Nouvelles visites</p>
+                <p class="fs-30 mb-2">{{ nouvellevisites }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-2 mb-4 stretch-card transparent">
+        <div class="card card-dark-blue">
+            <div class="card-body">
+                <p class="mb-4">Visites récurrentes</p>
+                <p class="fs-30 mb-2">{{ visiterecurentes }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-2 mb-4 stretch-card transparent">
+        <div class="card card-tale">
+            <div class="card-body">
+                <p class="mb-4">Visites Total</p>
+                <p class="fs-30 mb-2">{{ totalvisites }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-2 mb-4 stretch-card transparent">
+        <div class="card card-light-blue">
+            <div class="card-body">
+                <p class="mb-4">Inscrits</p>
+                <p class="fs-30 mb-2">{{ totalinscrits }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-2 mb-4 stretch-card transparent">
+        <div class="card card-light-blue">
+            <div class="card-body">
+                <p class="mb-4">Liste d'attente</p>
+                <p class="fs-30 mb-2">{{ listeattente }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-2 mb-4 stretch-card transparent">
+        <div class="card card-light-danger">
+            <div class="card-body">
+                <p class="mb-4">Taux de conversion</p>
+                <p class="fs-30 mb-2">{{ taux }}%</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h3 class="text-rose h4 font-weight-bold pl-3 pb-3">Visite</h3>
+<div class="row">
+    <div class="col-sm-6 pb-3">
+        <div class="card">
+            <div class="card-body p-1 text-center">
+                <strong class="p-2">Visites totales</strong>
+                <div id="visites" style="height: 200px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 pb-3">
+        <div class="card">
+            <div class="card-body p-1 text-center">
+                <strong class="p-2">Nouvelles visites</strong>
+                <div id="nouvelles-visites" style="height: 200px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 pb-3">
+        <div class="card">
+            <div class="card-body p-1 text-center">
+                <strong class="p-2">Visites récurrentes</strong>
+                <div id="visites-recurrente" style="height: 200px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class="text-rose h4 font-weight-bold pl-3 pb-3">Inscription</h3>
+<div class="row">
+    <div class="col-sm-6 pb-3">
+        <div class="card">
+            <div class="card-body p-1 text-center">
+                <strong class="p-2">Inscriptions au lancement</strong>
+                <div id="prelancement" style="height: 200px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 pb-3">
+        <div class="card">
+            <div class="card-body p-1 text-center">
+                <strong class="p-2">Inscriptions à la liste d'attente</strong>
+                <div id="liste-attente" style="height: 200px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class="text-rose h4 font-weight-bold pl-3 pb-3">Taux de conversion</h3>
+<div class="row">
+    <div class="col-sm-6 pb-3">
+        <div class="card">
+            <div class="card-body p-1 text-center">
+                <strong class="p-2">Taux de conversion</strong>
+                <div id="taux" style="height: 200px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+
+    window.onload = function () {
+
+        var chart = new CanvasJS.Chart("visites", {
+            title: {
+                text: false
+            },
+            axisY: {
+                title: false
+            },
+            data: [{
+                type: "spline",
+                dataPoints: {{ dataVisites|raw }}
+            }]
+        });
+        chart.render();
+
+        var visiteReccurentes = new CanvasJS.Chart("visites-recurrente", {
+            title: {
+                text: false
+            },
+            axisY: {
+                title: false
+            },
+            data: [{
+                type: "spline",
+                dataPoints: {{ dataVisitesRecurentes|raw }}
+            }]
+        });
+        visiteReccurentes.render();
+
+        var nouvelleVisites = new CanvasJS.Chart("nouvelles-visites", {
+            title: {
+                text: false
+            },
+            axisY: {
+                title: false
+            },
+            data: [{
+                type: "spline",
+                dataPoints: {{ dataNouvellesVisites|raw }}
+            }]
+        });
+        nouvelleVisites.render();
+
+        var prelancement = new CanvasJS.Chart("prelancement", {
+            title: {
+                text: false
+            },
+            axisY: {
+                title: false
+            },
+            data: [{
+                type: "spline",
+                dataPoints: {{ dataprelancements|raw }}
+            }]
+        });
+        prelancement.render();
+
+        var listeAttente = new CanvasJS.Chart("liste-attente", {
+            title: {
+                text: false
+            },
+            axisY: {
+                title: false
+            },
+            data: [{
+                type: "spline",
+                dataPoints: {{ dataListeAttente|raw }}
+            }]
+        });
+        listeAttente.render();
+
+        var dataTaux = new CanvasJS.Chart("taux", {
+            title: {
+                text: false
+            },
+            axisY: {
+                title: false
+            },
+            data: [{
+                type: "spline",
+                dataPoints: {{ dataTaux|raw }}
+            }]
+        });
+        dataTaux.render();
+  
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,4 @@
+<form method="post" class="d-inline" action="{{ path('admin_videos_delete', {'id': video.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimé cette vidéo?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ video.id) }}">
+    <button class="btn btn-inverse-danger btn-sm"><i class="mdi mdi-delete-forever"></i></button>
+</form>

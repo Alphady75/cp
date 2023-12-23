@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Convertis{% endblock %}
+
+{% block body %}
+    <h1>Convertis</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ converti.id }}</td>
+            </tr>
+            <tr>
+                <th>Ip</th>
+                <td>{{ converti.ip }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ converti.numero }}</td>
+            </tr>
+            <tr>
+                <th>Instagram</th>
+                <td>{{ converti.instagram }}</td>
+            </tr>
+            <tr>
+                <th>AvatarInstagram</th>
+                <td>{{ converti.avatarInstagram }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ converti.date ? converti.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_convertis_index') }}">back to list</a>
+
+    <a href="{{ path('admin_convertis_edit', {'id': converti.id}) }}">edit</a>
+
+    {{ include('admin_convertis/_delete_form.html.twig') }}
+{% endblock %}
